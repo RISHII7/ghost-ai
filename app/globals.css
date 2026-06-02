@@ -1,2 +1,178 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    /* Fonts mapping */
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+    --font-heading: var(--font-geist-sans);
+
+    /* Shadcn base layout tokens */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    /* Sidebar tokens */
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* Custom utility tokens defined in ui-context.md */
+    --color-bg-base: var(--bg-base);
+    --color-bg-surface: var(--bg-surface);
+    --color-bg-elevated: var(--bg-elevated);
+    --color-bg-subtle: var(--bg-subtle);
+
+    --color-border-default: var(--border-default);
+    --color-border-subtle: var(--border-subtle);
+    --color-border-surface-border: var(--border-default);
+
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+    --color-text-faint: var(--text-faint);
+
+    --color-text-copy-primary: var(--text-primary);
+    --color-text-copy-secondary: var(--text-secondary);
+    --color-text-copy-muted: var(--text-muted);
+    --color-text-copy-faint: var(--text-faint);
+    --color-text-brand: var(--accent-primary);
+    --color-text-ai: var(--accent-ai-text);
+
+    --color-accent-primary: var(--accent-primary);
+    --color-accent-primary-dim: var(--accent-primary-dim);
+    --color-bg-accent-dim: var(--accent-primary-dim);
+    --color-accent-ai: var(--accent-ai);
+    --color-accent-ai-text: var(--accent-ai-text);
+
+    --color-state-error: var(--state-error);
+    --color-state-success: var(--state-success);
+    --color-state-warning: var(--state-warning);
+
+    /* Border Radius tokens mapped as in ui-context.md */
+    --radius-xl: var(--radius); /* rounded-xl */
+    --radius-2xl: calc(var(--radius) * 1.5); /* rounded-2xl */
+    --radius-3xl: calc(var(--radius) * 2.0); /* rounded-3xl */
+}
+
+:root {
+    /* Design System variables */
+    --bg-base: #080809;
+    --bg-surface: #111114;
+    --bg-elevated: #18181c;
+    --bg-subtle: #1e1e23;
+    --border-default: #2a2a30;
+    --border-subtle: #3a3a42;
+    --text-primary: #f0f0f4;
+    --text-secondary: #c0c0cc;
+    --text-muted: #808090;
+    --text-faint: #505060;
+    --accent-primary: #00c8d4;
+    --accent-primary-dim: rgba(0, 200, 212, 0.12);
+    --accent-ai: #6457f9;
+    --accent-ai-text: #8b82ff;
+    --state-error: #ff4d4f;
+    --state-success: #34d399;
+    --state-warning: #fbbf24;
+
+    /* Shadcn layout mappings */
+    --background: var(--bg-base);
+    --foreground: var(--text-primary);
+    --card: var(--bg-surface);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-elevated);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--accent-primary);
+    --primary-foreground: #080809;
+    --secondary: var(--bg-subtle);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--bg-subtle);
+    --muted-foreground: var(--text-muted);
+    --accent: var(--bg-subtle);
+    --accent-foreground: var(--text-primary);
+    --destructive: var(--state-error);
+    --destructive-foreground: var(--text-primary);
+    --border: var(--border-default);
+    --input: var(--border-subtle);
+    --ring: var(--accent-primary);
+    --radius: 0.75rem;
+
+    /* Sidebar mappings */
+    --sidebar: var(--bg-surface);
+    --sidebar-foreground: var(--text-primary);
+    --sidebar-primary: var(--accent-primary);
+    --sidebar-primary-foreground: #080809;
+    --sidebar-accent: var(--bg-subtle);
+    --sidebar-accent-foreground: var(--text-primary);
+    --sidebar-border: var(--border-default);
+    --sidebar-ring: var(--accent-primary);
+}
+
+.dark {
+    /* Same mappings for safety when .dark is applied */
+    --background: var(--bg-base);
+    --foreground: var(--text-primary);
+    --card: var(--bg-surface);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-elevated);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--accent-primary);
+    --primary-foreground: #080809;
+    --secondary: var(--bg-subtle);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--bg-subtle);
+    --muted-foreground: var(--text-muted);
+    --accent: var(--bg-subtle);
+    --accent-foreground: var(--text-primary);
+    --destructive: var(--state-error);
+    --destructive-foreground: var(--text-primary);
+    --border: var(--border-default);
+    --input: var(--border-subtle);
+    --ring: var(--accent-primary);
+    --radius: 0.75rem;
+
+    --sidebar: var(--bg-surface);
+    --sidebar-foreground: var(--text-primary);
+    --sidebar-primary: var(--accent-primary);
+    --sidebar-primary-foreground: #080809;
+    --sidebar-accent: var(--bg-subtle);
+    --sidebar-accent-foreground: var(--text-primary);
+    --sidebar-border: var(--border-default);
+    --sidebar-ring: var(--accent-primary);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground antialiased;
+    }
+    html {
+        @apply font-sans;
+    }
+}
