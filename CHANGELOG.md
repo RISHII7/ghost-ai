@@ -7,7 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.1.2-alpha] - 2026-06-02
+
+### Added
+- Initialized and configured `shadcn/ui` with Next.js and Tailwind CSS v4 compatibility.
+- Installed `lucide-react` for stroke-based interface icons.
+- Installed core `shadcn/ui` primitive components in `components/ui/`:
+  - `Button`, `Card`, `Dialog`, `Input`, `Tabs`, `Textarea`, `ScrollArea`
+- Added workspace settings in `.vscode/settings.json` to ignore unknown Tailwind v4 CSS at-rules (`@theme`, `@apply`, `@custom-variant`).
+
+### Changed
+- Configured visual styling variable tokens in `app/globals.css` with the dark technical workspace palette specified in `ui-context.md`.
+
 ## [0.1.1-alpha] - 2026-06-02
+
 
 ### Added
 - Created agent application building context files under `context/`:
