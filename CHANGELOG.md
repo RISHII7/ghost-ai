@@ -7,7 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.1.1-alpha] - 2026-06-02
+
+### Added
+- Created agent application building context files under `context/`:
+  - `project-overview.md` (Product goals, user personas, core feature flow)
+  - `architecture-context.md` (Data schemas, state synchronization, background workers)
+  - `ui-context.md` (Layouts, themes, interactive canvas requirements)
+  - `code-standards.md` (Coding style and standards)
+  - `ai-workflow-rules.md` (Task breakdown, PR practices, testing rules)
+  - `progress-tracker.md` (Project phase and checklist tracking)
+
+### Changed
+- Updated `AGENTS.md` rule instructions to integrate context verification for AI agents.
+
 ## [0.1.0-alpha] - 2026-06-02
+
 
 ### Added
 - Enterprise-grade documentation templates (`README.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `LICENSE`, `.env.example`).
