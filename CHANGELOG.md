@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.1-alpha] - 2026-06-02
+
+### Changed
+- Replaced the standard MIT License with a premium, styled ASCII art layout branded with "GHOST-AI", outlining repository metadata and clear checkmark lists for permissions, conditions, and limitations.
+
 ## [0.2.0-alpha] - 2026-06-02
 
 ### Added

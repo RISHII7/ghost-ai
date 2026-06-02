@@ -37,3 +37,4 @@ Update this file whenever the current phase, active feature, or implementation s
 - Using Next.js 16.2.7 with React 19 and Tailwind CSS v4.
 - shadcn version 4.10.0 was used; it auto-detected Tailwind v4.
 - lucide-react installed as a direct dependency.
+- Version 0.2.1-alpha released: Updated and styled the LICENSE file with a custom ASCII-art layout branded with GHOST-AI.
