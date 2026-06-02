@@ -7,7 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.0-alpha] - 2026-06-02
+
+### Added
+- Created `components/editor/editor-navbar.tsx` — fixed-height top navbar with left/center/right sections and sidebar toggle button using `PanelLeftOpen`/`PanelLeftClose` icons.
+- Created `components/editor/project-sidebar.tsx` — floating overlay sidebar that slides in from the left without pushing page content, featuring:
+  - Header with "Projects" title and close button
+  - shadcn `Tabs` component with "My Projects" and "Shared" tabs (both with empty placeholder states)
+  - Full-width "New Project" button with `Plus` icon at the bottom
+  - Backdrop overlay for click-to-close behavior
+- Added `context/feature-specs/02-editor.md` feature specification for editor chrome.
+
+### Changed
+- Rewired `app/page.tsx` to compose the editor layout with `EditorNavbar`, `ProjectSidebar`, and a canvas placeholder area with sidebar toggle state management.
+- Updated `context/progress-tracker.md` to reflect Phase 2 completion.
+
 ## [0.1.2-alpha] - 2026-06-02
+
 
 ### Added
 - Initialized and configured `shadcn/ui` with Next.js and Tailwind CSS v4 compatibility.
