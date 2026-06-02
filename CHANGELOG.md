@@ -19,6 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Configured visual styling variable tokens in `app/globals.css` with the dark technical workspace palette specified in `ui-context.md`.
 
+### Fixed
+- Added `@emnapi/core` and `@emnapi/runtime` as development dependencies to prevent lockfile sync failures on Linux-based CI runners.
+
+
 ## [0.1.1-alpha] - 2026-06-02
 
 
