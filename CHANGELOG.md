@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.5.0-alpha] - 2026-06-05
+
+### Added
+- Implemented database models `Project` and `ProjectCollaborator` using Prisma 7 schema splitting inside `prisma/models/project.prisma`.
+- Configured project schemas with status enums (`DRAFT`, `ARCHIVED`), owner ID indexes, cascade deletes on collaborator associations, unique email constraints, and compound indexes.
+- Created `lib/prisma.ts` cached client singleton that branches on `DATABASE_URL`:
+  - Directly instantiates `PrismaClient` for `prisma+postgres://` protocols (Accelerate).
+  - Uses `@prisma/adapter-pg` with a PostgreSQL connection pool otherwise.
+- Ran the first migration (`20260605142318_init`) and generated the local type-safe client in `app/generated/prisma`.
+
 ## [0.4.0-alpha] - 2026-06-05
 
 ### Added

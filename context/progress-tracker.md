@@ -3,13 +3,14 @@
 Update this file whenever the current phase, active feature, or implementation state changes.
 
 ## Current Phase
-- Feature 04 (Project Dialogs) — complete
+- Feature 05 (Prisma) — complete
 
 ## Current Goal
-- Feature 05 (TBD)
+- Feature 06 (TBD)
 
 ## Completed
 
+- Feature 05: Prisma Integration — Added `Project` and `ProjectCollaborator` database models under `prisma/models/project.prisma` using Prisma 7 schema splitting. Configured cached singleton client in `lib/prisma.ts` branching on `DATABASE_URL` (Accelerate vs Pg adapter). Ran migration and generated local client in `app/generated/prisma`. Verified type safety via `npm run build`.
 - Feature 04: Project Dialogs — Created `useProjectDialogs` hook to manage mock projects list, dialog states (create, rename, delete), loading delay, and form input/live slug generation. Created `ProjectDialogs` component rendering responsive dialog modals. Updated `ProjectSidebar` to list owned/shared projects and render rename/delete action triggers on hover. Updated `app/editor/page.tsx` to wire sidebar action parameters and dialog layout.
 - Feature 01: Design System — shadcn/ui installed and configured for Tailwind v4, dark-only theme tokens in globals.css, Button/Card/Dialog/Input/Tabs/Textarea/ScrollArea components added to components/ui/, lucide-react installed, lib/utils.ts cn() helper in place. TypeScript compiles clean.
 - Feature 02: Editor Chrome — EditorNavbar (fixed top bar with PanelLeftOpen/PanelLeftClose toggle) and ProjectSidebar (fixed overlay, slides from left, Projects title + close button, My Projects/Shared tabs with empty states, New Project button) added to components/editor/. Dialog pattern confirmed ready via existing components/ui/dialog.tsx. app/page.tsx rewired with sidebar state management and canvas placeholder. TypeScript and ESLint clean.
@@ -20,7 +21,7 @@ Update this file whenever the current phase, active feature, or implementation s
 - None.
 
 ## Next Up
-- Feature 05 (TBD)
+- Feature 06 (TBD)
 
 ## Open Questions
 
@@ -46,3 +47,4 @@ Update this file whenever the current phase, active feature, or implementation s
 - Version 0.2.1-alpha released: Updated and styled the LICENSE file with a custom ASCII-art layout branded with GHOST-AI.
 - Version 0.3.0-alpha released: Full Clerk auth integration — provider, proxy, auth pages, redirects, route protection, UserButton.
 - Version 0.4.0-alpha released: Implement project dialog actions (create, rename, delete) using React custom hook and state-management, rendering hover actions on ProjectSidebar, and mobile-responsive backdrop.
+- Version 0.5.0-alpha released: Set up Prisma 7 schema models, cached client singleton with connection URL branching, database migrations, and local type-safe client generation.
