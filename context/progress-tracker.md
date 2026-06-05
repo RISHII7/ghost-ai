@@ -3,13 +3,14 @@
 Update this file whenever the current phase, active feature, or implementation state changes.
 
 ## Current Phase
-- Feature 03 (Auth) — complete
+- Feature 04 (Project Dialogs) — complete
 
 ## Current Goal
-- Feature 04 (TBD)
+- Feature 05 (TBD)
 
 ## Completed
 
+- Feature 04: Project Dialogs — Created `useProjectDialogs` hook to manage mock projects list, dialog states (create, rename, delete), loading delay, and form input/live slug generation. Created `ProjectDialogs` component rendering responsive dialog modals. Updated `ProjectSidebar` to list owned/shared projects and render rename/delete action triggers on hover. Updated `app/editor/page.tsx` to wire sidebar action parameters and dialog layout.
 - Feature 01: Design System — shadcn/ui installed and configured for Tailwind v4, dark-only theme tokens in globals.css, Button/Card/Dialog/Input/Tabs/Textarea/ScrollArea components added to components/ui/, lucide-react installed, lib/utils.ts cn() helper in place. TypeScript compiles clean.
 - Feature 02: Editor Chrome — EditorNavbar (fixed top bar with PanelLeftOpen/PanelLeftClose toggle) and ProjectSidebar (fixed overlay, slides from left, Projects title + close button, My Projects/Shared tabs with empty states, New Project button) added to components/editor/. Dialog pattern confirmed ready via existing components/ui/dialog.tsx. app/page.tsx rewired with sidebar state management and canvas placeholder. TypeScript and ESLint clean.
 - Feature 03: Auth — Clerk auth wired end-to-end. ClerkProvider wraps root layout with dark base theme and CSS variable overrides (no hardcoded colors). proxy.ts at project root uses clerkMiddleware with createRouteMatcher to protect all routes except /sign-in and /sign-up. Sign-in and sign-up pages under app/(auth)/ route group with two-panel layout (left: compact logo, tagline, text feature list; right: centered Clerk form; collapses to form-only on small screens). Root page.tsx redirects authenticated users to /editor and unauthenticated to /sign-in. Editor moved to app/editor/page.tsx. UserButton added to EditorNavbar right section for profile and logout. @clerk/themes installed for dark theme. npm run build passes clean.
@@ -19,7 +20,7 @@ Update this file whenever the current phase, active feature, or implementation s
 - None.
 
 ## Next Up
-- Feature 04 (TBD)
+- Feature 05 (TBD)
 
 ## Open Questions
 
@@ -44,3 +45,4 @@ Update this file whenever the current phase, active feature, or implementation s
 - lucide-react installed as a direct dependency.
 - Version 0.2.1-alpha released: Updated and styled the LICENSE file with a custom ASCII-art layout branded with GHOST-AI.
 - Version 0.3.0-alpha released: Full Clerk auth integration — provider, proxy, auth pages, redirects, route protection, UserButton.
+- Version 0.4.0-alpha released: Implement project dialog actions (create, rename, delete) using React custom hook and state-management, rendering hover actions on ProjectSidebar, and mobile-responsive backdrop.
