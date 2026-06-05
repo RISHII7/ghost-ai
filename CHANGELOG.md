@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Uses `@prisma/adapter-pg` with a PostgreSQL connection pool otherwise.
 - Ran the first migration (`20260605142318_init`) and generated the local type-safe client in `app/generated/prisma`.
 
+### Fixed
+- Fixed ESLint explicit `any` error in `lib/prisma.ts` constructor casting.
+
 ## [0.4.0-alpha] - 2026-06-05
 
 ### Added

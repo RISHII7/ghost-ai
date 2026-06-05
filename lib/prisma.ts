@@ -8,6 +8,7 @@ function createPrismaClient(): PrismaClient {
 
   if (connectionString.startsWith("prisma+postgres://")) {
     // Use Accelerate (direct connection, no driver adapter)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return new PrismaClient({} as any);
   }
 
