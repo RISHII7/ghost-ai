@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.3.0-alpha] - 2026-06-05
+
+### Added
+- Integrated Clerk auth end-to-end (ClerkProvider, sign-in, and sign-up).
+- Added a two-panel visual layout for auth pages (`app/(auth)/layout.tsx`) featuring branding, dark themed messaging, list of feature points on the left (40% width, hides on mobile), and Clerk form on the right (60% width).
+- Added custom styling to Clerk via CSS design system variable mapping (`var(--color-bg-base)`, etc.) in `app/layout.tsx`.
+- Implemented route protection using Next.js 16 root `proxy.ts`, configuring route matching to protect all editor paths while allowing public access to `/sign-in` and `/sign-up`.
+- Added redirects on the root page (`app/page.tsx`) directing authenticated users to `/editor` and unauthenticated users to `/sign-in`.
+- Added `UserButton` to `EditorNavbar` to support profile settings and sign out.
+
+### Fixed
+- Fixed bug where the editor sidebar failed to open or close due to a property mismatch (`isSidebarOpen` and `onToggleSidebar` passed instead of `isOpen` and `onToggle` expected by `EditorNavbar`).
+
 ## [0.2.1-alpha] - 2026-06-02
 
 ### Changed

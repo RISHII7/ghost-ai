@@ -1,40 +1,32 @@
 "use client";
 
-import { PanelLeftOpen, PanelLeftClose } from "lucide-react";
+import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 
 interface EditorNavbarProps {
-  isSidebarOpen: boolean;
-  onToggleSidebar: () => void;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-export function EditorNavbar({
-  isSidebarOpen,
-  onToggleSidebar,
-}: EditorNavbarProps) {
+export function EditorNavbar({ isOpen, onToggle }: EditorNavbarProps) {
   return (
-    <nav className="flex h-12 shrink-0 items-center border-b border-border-default bg-bg-surface px-3">
-      {/* Left section */}
+    <header className="h-12 shrink-0 flex items-center justify-between px-3 bg-bg-surface border-b border-border-default">
       <div className="flex items-center">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={onToggleSidebar}
-          className="h-8 w-8 text-text-muted hover:text-text-primary"
-        >
-          {isSidebarOpen ? (
-            <PanelLeftClose className="h-4 w-4" />
+        <Button variant="ghost" size="icon" onClick={onToggle}>
+          {isOpen ? (
+            <PanelLeftClose className="h-5 w-5" />
           ) : (
-            <PanelLeftOpen className="h-4 w-4" />
+            <PanelLeftOpen className="h-5 w-5" />
           )}
+          <span className="sr-only">Toggle sidebar</span>
         </Button>
       </div>
-
-      {/* Center section */}
-      <div className="flex flex-1 items-center justify-center" />
-
-      {/* Right section */}
+      <div className="flex-1" />
       <div className="flex items-center" />
-    </nav>
+      <div className="flex items-center">
+        <UserButton />
+      </div>
+    </header>
   );
 }
