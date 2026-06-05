@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.7.0-alpha] - 2026-06-05
+
+### Added
+- Switched the main `/editor` route handler to an async server component to fetch owned and shared projects server-side.
+- Implemented server-side data fetching helper `getProjectsForUser` (`lib/projects.ts`) to query database records concurrently.
+- Created `EditorHomeClient` (`components/editor/editor-home-client.tsx`) as a shared client shell for editor workspace views.
+- Created `useProjectActions` hook (`hooks/use-project-actions.ts`) to coordinate modal interactions and API mutations (POST, PATCH, DELETE) for real project data.
+- Configured dynamic room ID slugification with randomized short suffixes when creating new projects.
+- Integrated `ProjectSidebar` and `ProjectDialogs` components with real backend-bound API mutations and navigation routing hooks.
+
+## [0.6.0-alpha] - 2026-06-05
+
+### Added
+- Created backend REST API endpoints for listing (`GET /api/projects`) and creating (`POST /api/projects`) projects.
+- Created dynamic REST API endpoints for renaming (`PATCH /api/projects/[projectId]`) and deleting (`DELETE /api/projects/[projectId]`) projects.
+- Integrated dynamic path parameters under Next.js 16 requirements by awaiting `params`.
+- Implemented Clerk-based authentication and user verification, returning `401` status for unauthenticated requests and `403` status for unauthorized project mutations (non-owner updates/deletions).
+- Configured default parameter fallback naming projects to `"Untitled Project"` and supporting optional custom ID parameter overrides.
+
 ## [0.5.0-alpha] - 2026-06-05
 
 ### Added

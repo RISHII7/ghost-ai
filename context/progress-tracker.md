@@ -3,13 +3,15 @@
 Update this file whenever the current phase, active feature, or implementation state changes.
 
 ## Current Phase
-- Feature 05 (Prisma) — complete
+- Feature 07 (Wire Editor Home) — complete
 
 ## Current Goal
-- Feature 06 (TBD)
+- Feature 08 (TBD)
 
 ## Completed
 
+- Feature 07: Wire Editor Home — Connected the editor home page, sidebar, and project dialogs to the real backend project APIs. Switched `/editor` to a server component that fetches owned/shared projects server-side. Created a shared client component `EditorHomeClient` and a unified hook `useProjectActions` that coordinates dialog states, input validation, unique slugified room ID preview, and optimistic routing for create, rename, and delete actions. Fully compliant with Next.js 16 and strict ESLint configuration.
+- Feature 06: Project APIs — Created backend REST API endpoints under `/api/projects` (GET list, POST create) and `/api/projects/[projectId]` (PATCH rename, DELETE delete). Integrated Clerk auth validation, enforced project owner boundary checks (403), defaulted empty POST name to "Untitled Project", and verified Next.js 16 dynamic route param promises. Passed `npm run build` and `npm run lint` cleanly.
 - Feature 05: Prisma Integration — Added `Project` and `ProjectCollaborator` database models under `prisma/models/project.prisma` using Prisma 7 schema splitting. Configured cached singleton client in `lib/prisma.ts` branching on `DATABASE_URL` (Accelerate vs Pg adapter). Ran migration and generated local client in `app/generated/prisma`. Verified type safety via `npm run build`.
 - Feature 04: Project Dialogs — Created `useProjectDialogs` hook to manage mock projects list, dialog states (create, rename, delete), loading delay, and form input/live slug generation. Created `ProjectDialogs` component rendering responsive dialog modals. Updated `ProjectSidebar` to list owned/shared projects and render rename/delete action triggers on hover. Updated `app/editor/page.tsx` to wire sidebar action parameters and dialog layout.
 - Feature 01: Design System — shadcn/ui installed and configured for Tailwind v4, dark-only theme tokens in globals.css, Button/Card/Dialog/Input/Tabs/Textarea/ScrollArea components added to components/ui/, lucide-react installed, lib/utils.ts cn() helper in place. TypeScript compiles clean.
@@ -21,7 +23,7 @@ Update this file whenever the current phase, active feature, or implementation s
 - None.
 
 ## Next Up
-- Feature 06 (TBD)
+- Feature 08 (TBD)
 
 ## Open Questions
 
@@ -48,3 +50,5 @@ Update this file whenever the current phase, active feature, or implementation s
 - Version 0.3.0-alpha released: Full Clerk auth integration — provider, proxy, auth pages, redirects, route protection, UserButton.
 - Version 0.4.0-alpha released: Implement project dialog actions (create, rename, delete) using React custom hook and state-management, rendering hover actions on ProjectSidebar, and mobile-responsive backdrop.
 - Version 0.5.0-alpha released: Set up Prisma 7 schema models, cached client singleton with connection URL branching, database migrations, and local type-safe client generation.
+- Version 0.6.0-alpha released: Set up projects REST API route handlers with Clerk authorization checks, async params, and error boundary responses.
+- Version 0.7.0-alpha released: Connected the editor page, sidebar, and dialogs to the backend REST API endpoints, enabling creation, renaming, and deleting of actual projects.
