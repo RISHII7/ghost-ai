@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.4.0-alpha] - 2026-06-05
+
+### Added
+- Created a dedicated React hook `hooks/use-project-dialogs.ts` centralizing state management for mock projects list, active dialog types (create, rename, delete), loading delay (400ms), name input, and automatic live slug generation.
+- Created `<ProjectDialogs />` component in `components/editor/project-dialogs.tsx` hosting modals for Create Project (featuring live slug preview with monospaced typography and layout-stability minimum height), Rename Project (auto-focusing and prefilled), and Delete Project (destructive confirmations).
+- Updated `<ProjectSidebar />` in `components/editor/project-sidebar.tsx` to list owned ("My Projects") vs shared ("Shared") projects.
+- Added rename (pencil) and delete (trash) icons next to owned projects in the sidebar that fade in on hover (`group-hover:opacity-100`), while suppressing these actions on shared/collaborator projects.
+- Constrained the sidebar's backdrop scrim to mobile layouts (`md:hidden`), allowing desktop canvas interactions to occur while keeping the sidebar open, and configured backdrop clicks to dismiss the sidebar on mobile.
+- Updated `app/editor/page.tsx` to integrate with `useProjectDialogs` and wire the centered Editor Home view (heading, description, and "New Project" trigger).
+
+### Changed
+- Adjusted the ASCII art border width and spacing inside the `LICENSE` file.
+
 ## [0.3.0-alpha] - 2026-06-05
 
 ### Added
