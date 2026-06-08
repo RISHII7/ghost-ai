@@ -52,3 +52,4 @@ Update this file whenever the current phase, active feature, or implementation s
 - Version 0.5.0-alpha released: Set up Prisma 7 schema models, cached client singleton with connection URL branching, database migrations, and local type-safe client generation.
 - Version 0.6.0-alpha released: Set up projects REST API route handlers with Clerk authorization checks, async params, and error boundary responses.
 - Version 0.7.0-alpha released: Connected the editor page, sidebar, and dialogs to the backend REST API endpoints, enabling creation, renaming, and deleting of actual projects.
+- Version 0.7.1-alpha released: Fixed build compilation failures in CI/CD environment by adding a schema generation prep-step.

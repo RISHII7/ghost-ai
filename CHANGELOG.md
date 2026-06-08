@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.7.1-alpha] - 2026-06-08
+
+### Fixed
+- Fixed build failure on CI/CD environments by prepending `prisma generate` to the `build` script in `package.json` to automatically compile the type-safe Prisma client before Next.js compiles.
+
 ## [0.7.0-alpha] - 2026-06-05
 
 ### Added
