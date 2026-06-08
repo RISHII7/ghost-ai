@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 
 export async function PATCH(
   request: NextRequest,
-  ctx: RouteContext<"/api/projects/[projectId]">,
+  ctx: { params: Promise<{ projectId: string }> },
 ) {
   const { userId } = await auth();
   if (!userId) return Response.json({ error: "Unauthorized" }, { status: 401 });
@@ -38,7 +38,7 @@ export async function PATCH(
 
 export async function DELETE(
   _request: NextRequest,
-  ctx: RouteContext<"/api/projects/[projectId]">,
+  ctx: { params: Promise<{ projectId: string }> },
 ) {
   const { userId } = await auth();
   if (!userId) return Response.json({ error: "Unauthorized" }, { status: 401 });

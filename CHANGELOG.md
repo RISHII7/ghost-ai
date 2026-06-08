@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.8.0-alpha] - 2026-06-08
+
+### Added
+- **Editor Workspace Shell (Feature 08)**:
+  - Created dynamic route `/editor/[roomId]` to load individual project workspace layouts.
+  - Implemented authorization boundary checks using Clerk identities, rendering an `<AccessDenied />` screen for unauthorized users.
+  - Integrated full 3-column workspace layout hosting the responsive sidebar, top navbar, canvas area with visual placeholder grid, and fixed right-hand AI panel toggle.
+  - Refactored arbitrary Tailwind CSS v4 styles to use canonical classes and variables.
+- **Collaborator Share Dialog (Feature 09)**:
+  - Created REST API endpoints for project collaborators (`GET`, `POST`, `DELETE` under `/api/projects/[projectId]/collaborators`) supporting user invitations and access removals.
+  - Integrated Clerk user lookup API to retrieve collaborator display names, primary emails, and avatar URLs.
+  - Created `<ProjectShareDialog />` modal rendering a list of current active collaborators, copyable project URL, and invite forms.
+  - Developed custom hook `useProjectShare` to manage permission states, form validations, and asynchronous mutations.
+
 ## [0.7.1-alpha] - 2026-06-08
 
 ### Fixed
