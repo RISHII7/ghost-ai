@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.10.0-alpha] - 2026-06-24
+
+### Added
+- **Node Shapes, Formatting & Label Editing (Features 13 & 14)**:
+  - Added double-click handlers to trigger direct inline text input editing on canvas node labels.
+  - Custom styled 6 canvas shapes (rectangle, diamond, circle, pill, cylinder, hexagon) with tailored geometry, bounds, and alignment.
+- **Node Colors Toolbar (Feature 15)**:
+  - Created context floating toolbar on selected nodes allowing real-time theme color selection from an 8-color palette.
+- **Custom Collaborative Edges (Feature 16)**:
+  - Created customized connection edges featuring dashed svg paths, custom stroke widths, and hover-triggered delete buttons.
+- **Ergonomics & Keyboard Shortcuts (Feature 17)**:
+  - Created `useKeyboardShortcuts` hook supporting `Delete` / `Backspace` bindings to clear selected nodes or edges.
+  - Created `<CanvasControls />` overlay for Canvas lock toggle, fit-to-view, zoom-in, and zoom-out operations.
+- **Starter Templates (Feature 18)**:
+  - Implemented `<StarterTemplatesModal />` providing Microservices, Layered, and Event-Driven diagrams to instantly populate blank rooms.
+
 ## [0.9.0-alpha] - 2026-06-24
 
 ### Added
