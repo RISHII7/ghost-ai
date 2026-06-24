@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.0] - 2026-06-25
+
+### Added
+- **Enterprise Documentation & Architecture Guides (Release v1.0.0)**:
+  - Generated and integrated the official high-resolution, vector-style **Ghost AI Logo** (`public/ghost_ai_logo.png`) as the project repository branding header.
+  - Refactored `README.md` into an enterprise-ready portal featuring centered logo headers, detailed feature columns, environment variables specification matrices, and quick start guide paths.
+  - Authored a comprehensive `ARCHITECTURE.md` specification detailing real-time sync states, multiplayer CRDT mapping, serverless background task schedules, Postgres schemas, and endpoint references.
+  - Updated `CONTRIBUTING.md` developer guidelines with conventions for conventional commits and pull request checks.
+
+### Changed
+- Bounded package production version to stable release `v1.0.0`.
+
 ## [0.11.0] - 2026-06-25
 
 ### Added

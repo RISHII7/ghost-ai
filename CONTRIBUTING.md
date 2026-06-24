@@ -1,4 +1,4 @@
-# Contributing to Ghost Arc
+# Contributing to Ghost AI
 
 First off, thank you for taking the time to contribute! This project thrives on community participation, and we want to make it as easy and transparent as possible.
 
@@ -87,4 +87,4 @@ Before submitting your PR, please make sure:
 
 ---
 
-Thank you for contributing to Ghost Arc! 👻📐
+Thank you for contributing to Ghost AI! 👻
