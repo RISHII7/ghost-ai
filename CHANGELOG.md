@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.11.0] - 2026-06-25
+
+### Added
+- **AI Design Agent & Background Task Orchestration (Features 22-26)**:
+  - Setup Trigger.dev v3 framework integration (`trigger.config.ts`, tasks configuration, and model fallbacks).
+  - Implemented the Ghost AI Design Agent task (`trigger/design-agent.ts`) that mutates the Liveblocks canvas room storage to add, move, resize, and delete nodes/edges.
+  - Implemented Clerk-authenticated endpoints (`/api/ai/design` and `/api/ai/design/token`) to trigger the design task and retrieve public access tokens.
+  - Integrated the client-side design agent UI, including a chat feed with real-time thinking states, user/assistant bubble styling, and quick prompt chips.
+- **Technical Specification Generator (Features 27-29)**:
+  - Implemented the Spec Generator task (`trigger/generate-spec.ts`) utilizing the `@ai-sdk/google` provider to generate detailed markdown documentation from the canvas.
+  - Configured Vercel Blob persistence for generated spec files and mapped them to database records via the `ProjectSpec` database model.
+  - Created specs REST API endpoints (`/api/projects/[projectId]/specs`, `GET`, `POST`, `DELETE`, and download handlers) for Clerk-authorized project specs.
+  - Integrated the Spec Tab interface within the AI Workspace Sidebar, providing dynamic spec generation buttons, static spec list widgets, download triggers, and real-time generation trackers.
+
+### Changed
+- **Database Schema**:
+  - Expanded Prisma schema (`prisma/models/project.prisma`) with `ProjectSpec` and `TaskRun` models, ran database migrations, and regenerated the Prisma Client.
+- **SSL Security Mode**:
+  - Replaced deprecated `sslmode=require` database connection alias with explicit `sslmode=verify-full` in `.env.local` to satisfy security warnings in `pg-connection-string`.
+
+### Fixed
+- **ESLint & TypeScript Conformance**:
+  - Configured `eslint.config.mjs` to ignore Trigger.dev temporary build directories (`.trigger/**`) to prevent unrelated lint failures.
+  - Resolved `exhaustive-deps` linter warnings and synchronous state updates inside `useEffect` in `ai-sidebar.tsx`.
+
 ## [0.11.0-alpha] - 2026-06-24
 
 ### Added

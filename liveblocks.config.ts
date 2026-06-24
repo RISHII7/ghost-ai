@@ -26,9 +26,24 @@ declare global {
       };
     };
 
-    RoomEvent: {};
+    RoomEvent: {
+      type: "ai-status";
+      message: string;
+      status: "start" | "thinking" | "complete" | "error";
+    };
 
     ThreadMetadata: {};
+
+    FeedMessageData: {
+      // ai-status-feed
+      text?: string;
+      status?: "start" | "thinking" | "complete" | "error";
+      // ai-chat feed
+      sender?: string;
+      role?: "user" | "assistant";
+      content?: string;
+      timestamp?: string;
+    };
 
     RoomInfo: {};
   }
