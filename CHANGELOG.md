@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.9.0-alpha] - 2026-06-24
+
+### Added
+- **Liveblocks Setup (Feature 10)**:
+  - Installed `@liveblocks/node` dependency and set up the Liveblocks authorization endpoint (`/api/liveblocks-auth`) to issue session tokens for authorized users.
+  - Linked Clerk user metadata (display name, avatar, and color from a 10-color palette) to the Liveblocks session identities.
+- **Base Canvas (Feature 11)**:
+  - Integrated `@xyflow/react` (React Flow) with Liveblocks using `@liveblocks/react-flow`.
+  - Created `CanvasRoom` and `CanvasEditor` to load the dynamic collaborative whiteboard, including standard pan, zoom, grid dots background, and minimap.
+- **Shape Panel (Feature 12)**:
+  - Created a floating `ShapePanel` overlay supporting draggable buttons for 6 shape types (rectangle, diamond, circle, pill, cylinder, hexagon) with default sizes and fill/text color configurations.
+  - Implemented the `onDrop` handler in `CanvasEditor` utilizing `screenToFlowPosition` to automatically convert drop coordinates and create new nodes in Liveblocks storage.
+  - Refactored `CanvasNodeComponent` and handlers to match canonical Tailwind v4 suffix important styles (`!`).
+
 ## [0.8.0-alpha] - 2026-06-08
 
 ### Added
