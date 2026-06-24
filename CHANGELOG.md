@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.11.0-alpha] - 2026-06-24
+
+### Added
+- **Presence Cursors & Collaborator Avatars (Feature 19)**:
+  - Added live cursor presence rendering on the canvas using `@liveblocks/react` to display active user pointers along with their names and custom color.
+  - Implemented the `<CollaboratorAvatars />` component in the canvas toolbar to display a list/stack of active collaborators currently in the room.
+- **Canvas Auto Save (Feature 21)**:
+  - Configured `@vercel/blob` storage integration for canvas persistence.
+  - Implemented client-side canvas auto-save hook (`useCanvasAutosave`) debounced by 2 seconds.
+  - Added visual save status indicator (idle, saving, saved, error).
+  - Renamed `canvasJsonPath` database field to `canvasBlobUrl` in Prisma schema, generated updated client, and ran migration.
+  - Added REST API endpoint `/api/projects/[projectId]/canvas` to fetch and store canvas state.
+
+### Changed
+- **Tailwind CSS v4 Classes (Feature 20)**:
+  - Refactored `components/editor/ai-sidebar.tsx` fixed spacing scale, updating `top-[3.75rem]` to `top-15` and `w-[21rem]` to `w-84`.
+- **Presence Cursor Ref Rendering (Bugfix)**:
+  - Fixed a React render lifecycle error in `presence-cursors.tsx` by resolving cursor offsets inside `useEffect` and window resize listeners instead of directly querying the ref during rendering.
+
 ## [0.10.0-alpha] - 2026-06-24
 
 ### Added
